@@ -20,8 +20,7 @@ A aplicação é projetada para ser modular, escalável e segura, com recursos c
 
 ## ✏️ Desenho da solução
 
-[Veja aqui]()
-
+[Veja aqui](https://github.com/priscila-vacari/verity-fluxo-caixa/blob/main/doc/desenho_tecnico.png)
 
 
 ## 🚀 Tecnologias Utilizadas
