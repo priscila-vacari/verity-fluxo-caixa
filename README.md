@@ -175,7 +175,9 @@ Worker: Logs serão exibidos no terminal e no diretório `/logs`.
 
 **5. Testar os Endpoints**
 
-Use **Postman** ou **cURL** para testar os endpoints:
+Use **Postman** ou **cURL** para testar os endpoints.
+
+[collection postman](https://github.com/priscila-vacari/verity-fluxo-caixa/blob/main/doc/FluxoCaixa.postman_collection.json)
 
 **Exemplo de Lançamentos**
 
