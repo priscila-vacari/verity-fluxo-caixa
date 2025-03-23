@@ -28,56 +28,72 @@
             Mapper
             </summary>
         </member>
-        <member name="T:FluxoCaixa.API.Controllers.v1.FinancialController">
+        <member name="T:FluxoCaixa.API.Controllers.v1.ConsolidationController">
             <summary>
-            Controller responsável pelos lançamentos e conciliações
+            Controller responsável pelas conciliações
             </summary>
             <param name="logger"></param>
             <param name="mapper"></param>
             <param name="serviceFactory"></param>
         </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.FinancialController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IServiceFactory)">
+        <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.LaunchController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IServiceFactory)">
             <summary>
-            Controller responsável pelos lançamentos e conciliações
+            Controller responsável pelas conciliações
             </summary>
             <param name="logger"></param>
             <param name="mapper"></param>
             <param name="serviceFactory"></param>
         </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GetLaunchByDate(System.DateTime)">
-            <summary>
-            Busca os lançamentos de uma data
-            </summary>
-            <param name="date"></param>
-            <returns>Retorna todos os lançamentos encontrados da data específica</returns>
-        </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.AddLaunch(FluxoCaixa.API.Models.LaunchRequestModel)">
-            <summary>
-            Adiciona um novo lançamento
-            </summary>
-            <param name="launchModel"></param>
-            <returns>Retorna o lançamento criado</returns>
-        </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GetConsolidationByDate(System.DateTime)">
+        <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByDate(System.DateTime)">
             <summary>
             Busca a conciliação de uma data
             </summary>
             <param name="date"></param>
             <returns>Retorna a conciliação encontrada da data específica</returns>
         </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GetConsolidationByRangeDate(FluxoCaixa.API.Models.ConsolidationRequestModel)">
+        <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByRangeDate(FluxoCaixa.API.Models.ConsolidationRequestModel)">
             <summary>
             Busca todas as conciliações de um range de datas
             </summary>
             <param name="request"></param>
             <returns>Retorna as conciliações encontradas do range de datas</returns>
         </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GenerateDailyconsolidationAsync(System.DateTime)">
+        <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.GenerateDailyconsolidationAsync(System.DateTime)">
             <summary>
             Gera uma nova conciliação a partir de uma data
             </summary>
             <param name="date"></param>
             <returns>Retorna a conciliação gerada</returns>
+        </member>
+        <member name="T:FluxoCaixa.API.Controllers.v1.LaunchController">
+            <summary>
+            Controller responsável pelos lançamentos
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="serviceFactory"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.LaunchController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.LaunchController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IServiceFactory)">
+            <summary>
+            Controller responsável pelos lançamentos
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="serviceFactory"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.LaunchController.GetLaunchByDate(System.DateTime)">
+            <summary>
+            Busca os lançamentos de uma data
+            </summary>
+            <param name="date"></param>
+            <returns>Retorna todos os lançamentos encontrados da data específica</returns>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.LaunchController.AddLaunch(FluxoCaixa.API.Models.LaunchRequestModel)">
+            <summary>
+            Adiciona um novo lançamento
+            </summary>
+            <param name="launchModel"></param>
+            <returns>Retorna o lançamento criado</returns>
         </member>
         <member name="T:FluxoCaixa.API.Filters.FieldError">
             <summary>

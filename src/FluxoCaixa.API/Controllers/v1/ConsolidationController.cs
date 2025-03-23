@@ -8,63 +8,22 @@ using Microsoft.AspNetCore.Mvc;
 namespace FluxoCaixa.API.Controllers.v1
 {
     /// <summary>
-    /// Controller responsável pelos lançamentos e conciliações
+    /// Controller responsável pelas conciliações
     /// </summary>
     /// <param name="logger"></param>
     /// <param name="mapper"></param>
     /// <param name="serviceFactory"></param>
     [ApiVersion("1.0")]
-    public class FinancialController(ILogger<FinancialController> logger, IMapper mapper, IServiceFactory serviceFactory) : BaseController(logger, mapper)
+    public class ConsolidationController(ILogger<LaunchController> logger, IMapper mapper, IServiceFactory serviceFactory) : BaseController(logger, mapper)
     {
         private readonly IServiceFactory _serviceFactory = serviceFactory;
-
-        /// <summary>
-        /// Busca os lançamentos de uma data
-        /// </summary>
-        /// <param name="date"></param>
-        /// <returns>Retorna todos os lançamentos encontrados da data específica</returns>
-        [HttpGet("launch/{date}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetLaunchByDate(DateTime date)
-        {
-            _logger.LogInformation("Obter todos os lançamentos do dia {date}", date);
-
-            var launchService = _serviceFactory.CreateLaunchService();
-            var launches = await launchService.GetByDateAsync(date);
-
-            var launchResponseModel = _mapper.Map<IEnumerable<LaunchResponseModel>>(launches);
-            return Ok(launchResponseModel);
-        }
-
-        /// <summary>
-        /// Adiciona um novo lançamento
-        /// </summary>
-        /// <param name="launchModel"></param>
-        /// <returns>Retorna o lançamento criado</returns>
-        [HttpPost("launch")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status409Conflict)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> AddLaunch([FromBody] LaunchRequestModel launchModel)
-        {
-            _logger.LogInformation("Criar novo lançamento para data {date}", launchModel.Date);
-
-            var launchDto = _mapper.Map<LaunchDTO>(launchModel);
-
-            var launchService = _serviceFactory.CreateLaunchService();
-            await launchService.AddAsync(launchDto);
-
-            var launchResponseModel = _mapper.Map<LaunchResponseModel>(launchDto);
-            return CreatedAtAction(nameof(AddLaunch), launchResponseModel);
-        }
 
         /// <summary>
         /// Busca a conciliação de uma data
         /// </summary>
         /// <param name="date"></param>
         /// <returns>Retorna a conciliação encontrada da data específica</returns>
-        [HttpGet("consolidation/{date}")]
+        [HttpGet("{date}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -84,7 +43,7 @@ namespace FluxoCaixa.API.Controllers.v1
         /// </summary>
         /// <param name="request"></param>
         /// <returns>Retorna as conciliações encontradas do range de datas</returns>
-        [HttpPost("consolidation")]
+        [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -104,7 +63,7 @@ namespace FluxoCaixa.API.Controllers.v1
         /// </summary>
         /// <param name="date"></param>
         /// <returns>Retorna a conciliação gerada</returns>
-        [HttpPost("consolidation/{date}")]
+        [HttpPost("{date}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
