@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FluxoCaixa.API</name>
+    </assembly>
+    <members>
+        <member name="T:FluxoCaixa.API.Controllers.BaseController">
+            <summary>
+            Base controller
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.BaseController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.BaseController},AutoMapper.IMapper)">
+            <summary>
+            Base controller
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="F:FluxoCaixa.API.Controllers.BaseController._logger">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="F:FluxoCaixa.API.Controllers.BaseController._mapper">
+            <summary>
+            Mapper
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Controllers.v1.FinancialController">
+            <summary>
+            Controller responsável pelos lançamentos e conciliações
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="serviceFactory"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.FinancialController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IServiceFactory)">
+            <summary>
+            Controller responsável pelos lançamentos e conciliações
+            </summary>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+            <param name="serviceFactory"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GetLaunchByDate(System.DateTime)">
+            <summary>
+            Busca os lançamentos de uma data
+            </summary>
+            <param name="date"></param>
+            <returns>Retorna todos os lançamentos encontrados da data específica</returns>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.AddLaunch(FluxoCaixa.API.Models.LaunchRequestModel)">
+            <summary>
+            Adiciona um novo lançamento
+            </summary>
+            <param name="launchModel"></param>
+            <returns>Retorna o lançamento criado</returns>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GetConsolidationByDate(System.DateTime)">
+            <summary>
+            Busca a conciliação de uma data
+            </summary>
+            <param name="date"></param>
+            <returns>Retorna a conciliação encontrada da data específica</returns>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GetConsolidationByRangeDate(FluxoCaixa.API.Models.ConsolidationRequestModel)">
+            <summary>
+            Busca todas as conciliações de um range de datas
+            </summary>
+            <param name="request"></param>
+            <returns>Retorna as conciliações encontradas do range de datas</returns>
+        </member>
+        <member name="M:FluxoCaixa.API.Controllers.v1.FinancialController.GenerateDailyconsolidationAsync(System.DateTime)">
+            <summary>
+            Gera uma nova conciliação a partir de uma data
+            </summary>
+            <param name="date"></param>
+            <returns>Retorna a conciliação gerada</returns>
+        </member>
+        <member name="T:FluxoCaixa.API.Filters.FieldError">
+            <summary>
+            Objeto de erros de validação em campos
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.FieldError.Field">
+            <summary>
+            Campo
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.FieldError.Error">
+            <summary>
+            Mensagem de erro
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Filters.ErrorResult">
+            <summary>
+            Objeto de erro padrão
+            </summary>
+            <param name="exception"></param>
+            <param name="correlationId"></param>
+            <param name="fieldErrors"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Filters.ErrorResult.#ctor(System.Exception,System.String,System.Collections.Generic.List{FluxoCaixa.API.Filters.FieldError})">
+            <summary>
+            Objeto de erro padrão
+            </summary>
+            <param name="exception"></param>
+            <param name="correlationId"></param>
+            <param name="fieldErrors"></param>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.ErrorResult.CorrelationId">
+            <summary>
+            CorrelationId do fluxo
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.ErrorResult.Error">
+            <summary>
+            Mensagem de erro
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.ErrorResult.Details">
+            <summary>
+            Detalhes do erro
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.ErrorResult.StackTrace">
+            <summary>
+            Rastreamento
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Filters.ErrorResult.FieldErrors">
+            <summary>
+            Campos com erro de validação
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Filters.ExceptionFilter">
+            <summary>
+            Filtro de exceção
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Filters.ExceptionFilter.#ctor">
+            <summary>
+            Filtro de exceção
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Filters.ExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Padroniza retorno de erros
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:FluxoCaixa.API.Mapping.MappingProfile">
+            <summary>
+            Mapeamento de modelos
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Mapping.MappingProfile.#ctor">
+            <summary>
+            Perfis de mapeamento
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Middlewares.BruteForceProtectionMiddleware">
+            <summary>
+            Middleware de proteção de força bruta 
+            </summary>
+            <param name="next"></param>
+            <param name="cache"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Middlewares.BruteForceProtectionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Middlewares.BruteForceProtectionMiddleware})">
+            <summary>
+            Middleware de proteção de força bruta 
+            </summary>
+            <param name="next"></param>
+            <param name="cache"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Middlewares.BruteForceProtectionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoke 
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FluxoCaixa.API.Middlewares.BruteForceProtectionMiddlewareExtensions">
+            <summary>
+            Classe de extensão para adicionar o middleware de proteção
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Middlewares.BruteForceProtectionMiddlewareExtensions.UseBruteForceProtection(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Adiciona extensão do middleware de proteção
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FluxoCaixa.API.Middlewares.CorrelationMiddleware">
+            <summary>
+            Middleware de rastreabilidade do fluxo
+            </summary>
+            <param name="logger"></param>
+            <param name="next"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Middlewares.CorrelationMiddleware.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Middlewares.CorrelationMiddleware},Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Middleware de rastreabilidade do fluxo
+            </summary>
+            <param name="logger"></param>
+            <param name="next"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Middlewares.CorrelationMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoke
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FluxoCaixa.API.Middlewares.CorrelationIdMiddlewareExtensions">
+            <summary>
+            Classe de extensão para adicionar o middleware de rastreabilidade
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Middlewares.CorrelationIdMiddlewareExtensions.UseCorrelationId(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Adiciona extensão do middleware de rastreabilidade
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FluxoCaixa.API.Models.ConsolidationRequestModel">
+            <summary>
+            Classe de requisição da conciliação
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.ConsolidationRequestModel.DateStart">
+            <summary>
+            Data inicial
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.ConsolidationRequestModel.DateEnd">
+            <summary>
+            Data final
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Models.ConsolidationResponseModel">
+            <summary>
+            Classe de resposta da conciliação
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.ConsolidationResponseModel.Date">
+            <summary>
+            Data
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.ConsolidationResponseModel.TotalCredit">
+            <summary>
+            Total de crédito
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.ConsolidationResponseModel.TotalDebit">
+            <summary>
+            Total de débito
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.ConsolidationResponseModel.Balance">
+            <summary>
+            Saldo
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Models.LaunchRequestModel">
+            <summary>
+            Classe de requisição do lançamento
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.LaunchRequestModel.Date">
+            <summary>
+            Data
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.LaunchRequestModel.Type">
+            <summary>
+            Tipo (crédito ou débito)
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.LaunchRequestModel.Amount">
+            <summary>
+            Valor
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Models.LaunchResponseModel">
+            <summary>
+            Classe de resposta do lançamento
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.LaunchResponseModel.Date">
+            <summary>
+            Data
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.LaunchResponseModel.Type">
+            <summary>
+            Tipo
+            </summary>
+        </member>
+        <member name="P:FluxoCaixa.API.Models.LaunchResponseModel.Amount">
+            <summary>
+            Valor
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Swagger.ConfigureSwaggerOptions">
+            <summary>
+            Classe de configuração de swagger
+            </summary>
+            <param name="apiVersionDescriptionProvider"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Swagger.ConfigureSwaggerOptions.#ctor(Asp.Versioning.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Classe de configuração de swagger
+            </summary>
+            <param name="apiVersionDescriptionProvider"></param>
+        </member>
+        <member name="M:FluxoCaixa.API.Swagger.ConfigureSwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            Configura descrições das versões
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:FluxoCaixa.API.Validators.ConsolidationRequestModelValidator">
+            <summary>
+            Classe de validação de conciliação
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Validators.ConsolidationRequestModelValidator.#ctor">
+            <summary>
+            Validador de conciliação
+            </summary>
+        </member>
+        <member name="T:FluxoCaixa.API.Validators.LaunchRequestModelValidator">
+            <summary>
+            Classe de validação de lançamento
+            </summary>
+        </member>
+        <member name="M:FluxoCaixa.API.Validators.LaunchRequestModelValidator.#ctor">
+            <summary>
+            Validador de lançamento
+            </summary>
+        </member>
+    </members>
+</doc>

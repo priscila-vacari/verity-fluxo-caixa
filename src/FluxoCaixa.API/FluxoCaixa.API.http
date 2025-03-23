@@ -1,0 +1,21 @@
+@FluxoCaixa.API_HostAddress = http://localhost:5106
+
+GET {{FluxoCaixa.API_HostAddress}}/api/v1/launch/2025-03-21
+Accept: application/json
+
+###
+
+POST {{FluxoCaixa.API_HostAddress}}/api/v1/launch/
+Accept: application/json
+
+###
+
+GET {{FluxoCaixa.API_HostAddress}}/api/v1/consolidation/2025-03-21
+Accept: application/json
+
+###
+
+POST {{FluxoCaixa.API_HostAddress}}/api/v1/consolidation/2025-03-21
+Accept: application/json
+
+###
