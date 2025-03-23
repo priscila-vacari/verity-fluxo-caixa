@@ -4,7 +4,6 @@ using FluxoCaixa.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FluxoCaixa.Tests.Infra
 {

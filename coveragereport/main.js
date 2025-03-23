@@ -222,22 +222,25 @@ var assemblies = [
     "name": "FluxoCaixa.API",
     "classes": [
       { "name": "FluxoCaixa.API.Controllers.BaseController", "rp": "FluxoCaixa.API_BaseController.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "FluxoCaixa.API.Controllers.v1.FinancialController", "rp": "FluxoCaixa.API_FinancialController.html", "cl": 38, "ucl": 0, "cal": 38, "tl": 122, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.API.Controllers.v1.ConsolidationController", "rp": "FluxoCaixa.API_ConsolidationController.html", "cl": 23, "ucl": 0, "cal": 23, "tl": 80, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.API.Controllers.v1.LaunchController", "rp": "FluxoCaixa.API_LaunchController.html", "cl": 17, "ucl": 0, "cal": 17, "tl": 64, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Models.ConsolidationRequestModel", "rp": "FluxoCaixa.API_ConsolidationRequestModel.html", "cl": 2, "ucl": 0, "cal": 2, "tl": 18, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Models.ConsolidationResponseModel", "rp": "FluxoCaixa.API_ConsolidationResponseModel.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Models.LaunchRequestModel", "rp": "FluxoCaixa.API_LaunchRequestModel.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Models.LaunchResponseModel", "rp": "FluxoCaixa.API_LaunchResponseModel.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Validators.ConsolidationRequestModelValidator", "rp": "FluxoCaixa.API_ConsolidationRequestModelValidator.html", "cl": 18, "ucl": 0, "cal": 18, "tl": 37, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Validators.LaunchRequestModelValidator", "rp": "FluxoCaixa.API_LaunchRequestModelValidator.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Program", "rp": "FluxoCaixa.API_Program.html", "cl": 0, "ucl": 96, "cal": 96, "tl": 151, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Program", "rp": "FluxoCaixa.API_Program.html", "cl": 0, "ucl": 96, "cal": 96, "tl": 149, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "FluxoCaixa.Application",
     "classes": [
       { "name": "FluxoCaixa.Application.DTOs.ConsolidationDTO", "rp": "FluxoCaixa.Application_ConsolidationDTO.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.Application.DTOs.LaunchDTO", "rp": "FluxoCaixa.Application_LaunchDTO.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "FluxoCaixa.Application.Services.ConsolidationService", "rp": "FluxoCaixa.Application_ConsolidationService.html", "cl": 35, "ucl": 0, "cal": 35, "tl": 64, "cb": 5, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "FluxoCaixa.Application.Services.LaunchService", "rp": "FluxoCaixa.Application_LaunchService.html", "cl": 22, "ucl": 0, "cal": 22, "tl": 44, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.Application.Mapping.MappingProfile", "rp": "FluxoCaixa.Application_MappingProfile.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 15, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.Application.Services.ConsolidationService", "rp": "FluxoCaixa.Application_ConsolidationService.html", "cl": 37, "ucl": 0, "cal": 37, "tl": 67, "cb": 6, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.Application.Services.LaunchService", "rp": "FluxoCaixa.Application_LaunchService.html", "cl": 24, "ucl": 0, "cal": 24, "tl": 47, "cb": 4, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.Application.Services.ServiceFactory", "rp": "FluxoCaixa.Application_ServiceFactory.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "FluxoCaixa.Domain",
@@ -255,7 +258,7 @@ var assemblies = [
   {
     "name": "FluxoCaixa.Service",
     "classes": [
-      { "name": "FluxoCaixa.Service.Services.ConsolidationWorkerService", "rp": "FluxoCaixa.Service_ConsolidationWorkerService.html", "cl": 23, "ucl": 1, "cal": 24, "tl": 38, "cb": 3, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "FluxoCaixa.Service.Services.ConsolidationWorkerService", "rp": "FluxoCaixa.Service_ConsolidationWorkerService.html", "cl": 23, "ucl": 1, "cal": 24, "tl": 38, "cb": 4, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 

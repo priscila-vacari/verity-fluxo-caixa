@@ -1,7 +1,6 @@
 ﻿using Asp.Versioning;
 using AutoMapper;
 using FluxoCaixa.API.Models;
-using FluxoCaixa.Application.DTOs;
 using FluxoCaixa.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +44,7 @@ namespace FluxoCaixa.API.Controllers.v1
         /// <returns>Retorna as conciliações encontradas do range de datas</returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetConsolidationByRangeDate([FromBody] ConsolidationRequestModel request)
@@ -65,7 +65,6 @@ namespace FluxoCaixa.API.Controllers.v1
         /// <returns>Retorna a conciliação gerada</returns>
         [HttpPost("{date}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GenerateDailyconsolidationAsync(DateTime date)
         {

@@ -37,10 +37,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"date\": \"2025-03-18T21:41:14.947Z\",\n  \"type\": 1,\n  \"amount\": 4\n}"
+							"raw": "{\n  \"date\": \"2025-03-23\",\n  \"type\": 0,\n  \"amount\": 90\n}"
 						},
 						"url": {
-							"raw": "https://localhost:7056/api/v1/Financial/launch",
+							"raw": "https://localhost:7056/api/v1/launch",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -49,7 +49,6 @@
 							"path": [
 								"api",
 								"v1",
-								"Financial",
 								"launch"
 							]
 						},
@@ -57,7 +56,7 @@
 					},
 					"response": [
 						{
-							"name": "Successful Response",
+							"name": "Successful Created Response",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -68,50 +67,57 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This collection makes a request to the Postman Echo service to get a list of request headers sent by an HTTP client.\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\"\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"raw": "{\n  \"date\": \"2025-03-23\",\n  \"type\": 1,\n  \"amount\": 90\n}"
 								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections",
+									"raw": "https://localhost:7056/api/v1/launch",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
+										"api",
+										"v1",
+										"launch"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Created",
+							"code": 201,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:08:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Location",
+									"value": "https://localhost:7056/api/v1/Launch"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "9bb67b72-77d5-4789-a01b-ba50bb2fe880"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n        \"name\": \"Test Collection\",\n        \"uid\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n    }\n}"
+							"body": "{\n    \"date\": \"2025-03-23T00:00:00\",\n    \"type\": 1,\n    \"amount\": 90\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -125,31 +131,19 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This collection makes a request to the Postman Echo service to get a list of request headers sent by an HTTP client.\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\"\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"raw": "{\n  \"date\": \"2025-03-24\",\n  \"type\": 0,\n  \"amount\": 100\n}"
 								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections",
+									"raw": "https://localhost:7056/api/v1/launch",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
+										"api",
+										"v1",
+										"launch"
 									]
 								}
 							},
@@ -159,73 +153,30 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"instanceFoundError\",\n        \"message\": \"The specified item already exists.\",\n        \"details\": {\n            \"item\": \"collection\",\n            \"id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n        }\n    }\n}"
-						},
-						{
-							"name": "Malformed Request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"value": "application/problem+json; charset=utf-8"
 								},
-								"url": {
-									"raw": "https://api.getpostman.com/collections",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
 								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 12:54:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "d216ac37-a8d7-4fe2-b49c-71b5e4b00a29"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"malformedRequestError\",\n        \"message\": \"Found 1 errors with the supplied collection.\",\n        \"details\": [\n            \": must have required property 'info'\"\n        ]\n    }\n}"
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"errors\": {\n        \"Date\": [\n            \"A data deve ser no máximo igual a hoje.\"\n        ]\n    },\n    \"traceId\": \"00-beaee87c7a193a020be9f942612dca88-5a591a178400ce4d-00\"\n}"
 						},
 						{
-							"name": "Rate Limit Exceeded",
+							"name": "Conflict Response",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -236,46 +187,113 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+									"raw": "{\n  \"date\": \"2025-03-23\",\n  \"type\": 0,\n  \"amount\": 100\n}"
 								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections",
+									"raw": "https://localhost:7056/api/v1/launch",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
+										"api",
+										"v1",
+										"launch"
 									]
 								}
 							},
-							"status": "Too Many Requests",
-							"code": 429,
+							"status": "Conflict",
+							"code": 409,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"description": ""
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 12:57:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "ca6015df-2ad8-41bb-9330-5c373f18c16b"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"rateLimited\",\n    \"message\": \"Rate limit exceeded. Please retry after 1669048687\"\n}"
+							"body": "{\n    \"correlationId\": \"ca6015df-2ad8-41bb-9330-5c373f18c16b\",\n    \"error\": \"Lançamento já cadastrado.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at FluxoCaixa.Application.Services.LaunchService.AddAsync(LaunchDTO launchDto) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\LaunchService.cs:line 40\\r\\n   at FluxoCaixa.API.Controllers.v1.LaunchController.AddLaunch(LaunchRequestModel launchModel) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\LaunchController.cs:line 57\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
+						},
+						{
+							"name": "InternalServerError Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"date\": \"2025-03-23\",\n  \"type\": 0,\n  \"amount\": 90\n}"
+								},
+								"url": {
+									"raw": "https://localhost:7056/api/v1/launch",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7056",
+									"path": [
+										"api",
+										"v1",
+										"launch"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:19:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "2d4c8999-c6c0-4589-85b1-d2f08f692a73"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"correlationId\": \"2d4c8999-c6c0-4589-85b1-d2f08f692a73\",\n    \"error\": \"Nome de objeto 'launches' inválido.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)\\r\\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n--- End of stack trace from previous location ---\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\\r\\n--- End of stack trace from previous location ---\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\\r\\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\\r\\n   at FluxoCaixa.Infra.Repositories.Repository`1.GetByKeysAsync(Object[] keys) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.InfraEstructure\\\\Repositories\\\\Repository.cs:line 31\\r\\n   at FluxoCaixa.Application.Services.LaunchService.AddAsync(LaunchDTO launchDto) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\LaunchService.cs:line 41\\r\\n   at FluxoCaixa.API.Controllers.v1.LaunchController.AddLaunch(LaunchRequestModel launchModel) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\LaunchController.cs:line 58\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						}
 					]
 				},
@@ -300,7 +318,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7056/api/v1/Financial/launch/2025-03-21",
+							"raw": "https://localhost:7056/api/v1/launch/2025-03-23",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -309,9 +327,8 @@
 							"path": [
 								"api",
 								"v1",
-								"Financial",
 								"launch",
-								"2025-03-21"
+								"2025-03-23"
 							]
 						},
 						"description": "Gets information about a collection. For a complete list of this endpoint's possible values, use the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json)."
@@ -323,16 +340,17 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/launch/2025-03-23",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"launch",
+										"2025-03-23"
 									]
 								}
 							},
@@ -342,109 +360,135 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This is a test collection that makes a tiny request to Postman Echo service to get the list of request headers sent by a HTTP client.\",\n            \"_postman_id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n            \"updatedAt\": \"2022-06-16T20:21:13.000Z\",\n            \"fork\": {\n                \"label\": \"Test Fork\",\n                \"createdAt\": \"2022-06-16T19:51:44.069Z\",\n                \"from\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n            }\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"id\": \"82ee981b-e19f-962a-401e-ea34ebfb4848\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                            ],\n                            \"type\": \"text/javascript\"\n                        }\n                    }\n                ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                },\n                \"response\": []\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Get Collection with Access Token",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2?access_key={{accessKey}}",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
-									],
-									"query": [
-										{
-											"key": "access_key",
-											"value": "{{accessKey}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+									"value": "application/json; charset=utf-8"
+								},
 								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 12:58:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "e15535a3-80b9-40e8-912e-75ce81817b9e"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This is a test collection that makes a tiny request to Postman Echo service to get the list of request headers sent by a HTTP client.\",\n            \"_postman_id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n            \"updatedAt\": \"2022-06-16T20:21:13.000Z\",\n            \"fork\": {\n                \"label\": \"Test Fork\",\n                \"createdAt\": \"2022-06-16T19:51:44.069Z\",\n                \"from\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n            }\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"id\": \"82ee981b-e19f-962a-401e-ea34ebfb4848\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                            ],\n                            \"type\": \"text/javascript\"\n                        }\n                    }\n                ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                },\n                \"response\": []\n            }\n        ]\n    }\n}"
+							"body": "[\n    {\n        \"date\": \"2025-03-23T00:00:00\",\n        \"type\": 0,\n        \"amount\": 100\n    }\n]"
 						},
 						{
-							"name": "Not Found",
+							"name": "Not Found Response",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/launch/2025-04-30",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"launch",
+										"2025-04-30"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:14:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "7476d857-8ae2-4f78-a5bd-94bf339a7ec6"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"instanceNotFoundError\",\n        \"message\": \"We could not find the collection you are looking for\"\n    }\n}"
+							"body": "{\n    \"correlationId\": \"7476d857-8ae2-4f78-a5bd-94bf339a7ec6\",\n    \"error\": \"Lançamento não encontrado para a data.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at FluxoCaixa.Application.Services.LaunchService.GetByDateAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\LaunchService.cs:line 27\\r\\n   at FluxoCaixa.API.Controllers.v1.LaunchController.GetLaunchByDate(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\LaunchController.cs:line 35\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						},
 						{
-							"name": "Rate Limit Exceeded",
+							"name": "InternalServerError Response",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/launch/2025-03-23",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"launch",
+										"2025-03-23"
 									]
 								}
 							},
-							"status": "Too Many Requests",
-							"code": 429,
+							"status": "Internal Server Error",
+							"code": 500,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:18:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "fe1c3a99-8290-4d24-831b-f87772a2c22d"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"rateLimited\",\n    \"message\": \"Rate limit exceeded. Please retry after 1669048687\"\n}"
+							"body": "{\n    \"correlationId\": \"fe1c3a99-8290-4d24-831b-f87772a2c22d\",\n    \"error\": \"Nome de objeto 'launches' inválido.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)\\r\\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n--- End of stack trace from previous location ---\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\\r\\n--- End of stack trace from previous location ---\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\\r\\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\\r\\n   at FluxoCaixa.Infra.Repositories.Repository`1.GetWhereAsync(Expression`1 predicate) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.InfraEstructure\\\\Repositories\\\\Repository.cs:line 37\\r\\n   at FluxoCaixa.Application.Services.LaunchService.GetByDateAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\LaunchService.cs:line 24\\r\\n   at FluxoCaixa.API.Controllers.v1.LaunchController.GetLaunchByDate(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\LaunchController.cs:line 35\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						}
 					]
 				}
@@ -480,7 +524,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://localhost:7056/api/v1/Financial/consolidation/2025-03-20",
+							"raw": "https://localhost:7056/api/v1/consolidation/2025-03-23",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -489,16 +533,15 @@
 							"path": [
 								"api",
 								"v1",
-								"Financial",
 								"consolidation",
-								"2025-03-20"
+								"2025-03-23"
 							]
 						},
 						"description": "Creates a collection using the [Postman Collection v2 schema format](https://schema.postman.com/json/collection/v2.1.0/docs/index.html). Include a `collection` object in the request body that contains the following required properties:\n\n*   `info` — An **object** that contains the following properties:\n    *   `name` — A **string** value that contains the collection's name.\n    *   `schema` — A **string** that contains a URL to the collection's schema. For example, the `https://schema.getpostman.com/collection/v1` URL.\n*   `item` — An **object** that contains the HTTP request and response information.\n    *   `request` — An **object** that contains the collection's request information. For a complete list of values, refer to the `definitions.request` entry in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json). If you pass an empty object for this value, the system defaults to an untitled GET request.\n\n**Note:**\n\n*   For a complete list of available property values for this endpoint, use the following references available in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json):\n    *   `info` object — Use the `definitions.info` entry.\n    *   `item` object — Use the `definitions.items` entry.\n*   For all other possible values, refer to the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json)."
 					},
 					"response": [
 						{
-							"name": "Successful Response",
+							"name": "Successful Created Response",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -507,166 +550,59 @@
 										"value": "application/json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This collection makes a request to the Postman Echo service to get a list of request headers sent by an HTTP client.\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\"\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections",
+									"raw": "https://localhost:7056/api/v1/consolidation/2025-03-23",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
+										"api",
+										"v1",
+										"consolidation",
+										"2025-03-23"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n        \"name\": \"Test Collection\",\n        \"uid\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n    }\n}"
-						},
-						{
-							"name": "Bad Request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This collection makes a request to the Postman Echo service to get a list of request headers sent by an HTTP client.\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\"\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://api.getpostman.com/collections",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"instanceFoundError\",\n        \"message\": \"The specified item already exists.\",\n        \"details\": {\n            \"item\": \"collection\",\n            \"id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n        }\n    }\n}"
-						},
-						{
-							"name": "Malformed Request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"name": "Content-Type",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://api.getpostman.com/collections",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
+							"status": "Created",
+							"code": 201,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 12:59:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Location",
+									"value": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "4bef53a3-9d10-464f-985f-0ab38d15b702"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"malformedRequestError\",\n        \"message\": \"Found 1 errors with the supplied collection.\",\n        \"details\": [\n            \": must have required property 'info'\"\n        ]\n    }\n}"
+							"body": "{\n    \"date\": \"2025-03-23T00:00:00\",\n    \"totalCredit\": 100,\n    \"totalDebit\": 0,\n    \"balance\": 100\n}"
 						},
 						{
-							"name": "Rate Limit Exceeded",
+							"name": "InternalServerError Response",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -675,48 +611,52 @@
 										"value": "application/json"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"collection\": {\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                                ],\n                            \"type\": \"text/javascript\"\n                            }\n                        }\n                    ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections",
+									"raw": "https://localhost:7056/api/v1/consolidation/2025-03-23",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections"
-									],
-									"query": [
-										{
-											"key": "workspace",
-											"value": "1f0df51a-8658-4ee8-a2a1-d2567dfa09a9",
-											"description": "Optional. A workspace ID in which to create the collection.\n\nIf you do not include this query parameter, the system creates the collection in your \"My Workspace\" workspace.",
-											"disabled": true
-										}
+										"api",
+										"v1",
+										"consolidation",
+										"2025-03-23"
 									]
 								}
 							},
-							"status": "Too Many Requests",
-							"code": 429,
+							"status": "Internal Server Error",
+							"code": 500,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"description": ""
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:20:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "e3c45500-67e3-4237-b7aa-b4a28bcd2791"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"rateLimited\",\n    \"message\": \"Rate limit exceeded. Please retry after 1669048687\"\n}"
+							"body": "{\n    \"correlationId\": \"e3c45500-67e3-4237-b7aa-b4a28bcd2791\",\n    \"error\": \"Nome de objeto 'launches' inválido.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)\\r\\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n--- End of stack trace from previous location ---\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\\r\\n--- End of stack trace from previous location ---\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\\r\\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\\r\\n   at FluxoCaixa.Infra.Repositories.Repository`1.GetWhereAsync(Expression`1 predicate) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.InfraEstructure\\\\Repositories\\\\Repository.cs:line 37\\r\\n   at FluxoCaixa.Application.Services.LaunchService.GetByDateAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\LaunchService.cs:line 24\\r\\n   at FluxoCaixa.Application.Services.ConsolidationService.GenerateDailyconsolidationAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\ConsolidationService.cs:line 49\\r\\n   at FluxoCaixa.API.Controllers.v1.ConsolidationController.GenerateDailyconsolidationAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\ConsolidationController.cs:line 75\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						}
 					]
 				},
@@ -741,7 +681,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7056/api/v1/Financial/consolidation/2025-03-21",
+							"raw": "https://localhost:7056/api/v1/consolidation/2025-03-23",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -750,9 +690,8 @@
 							"path": [
 								"api",
 								"v1",
-								"Financial",
 								"consolidation",
-								"2025-03-21"
+								"2025-03-23"
 							]
 						},
 						"description": "Gets information about a collection. For a complete list of this endpoint's possible values, use the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json)."
@@ -764,16 +703,17 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/consolidation/2025-03-23",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"consolidation",
+										"2025-03-23"
 									]
 								}
 							},
@@ -783,109 +723,135 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This is a test collection that makes a tiny request to Postman Echo service to get the list of request headers sent by a HTTP client.\",\n            \"_postman_id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n            \"updatedAt\": \"2022-06-16T20:21:13.000Z\",\n            \"fork\": {\n                \"label\": \"Test Fork\",\n                \"createdAt\": \"2022-06-16T19:51:44.069Z\",\n                \"from\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n            }\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"id\": \"82ee981b-e19f-962a-401e-ea34ebfb4848\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                            ],\n                            \"type\": \"text/javascript\"\n                        }\n                    }\n                ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                },\n                \"response\": []\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Get Collection with Access Token",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2?access_key={{accessKey}}",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
-									],
-									"query": [
-										{
-											"key": "access_key",
-											"value": "{{accessKey}}"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+									"value": "application/json; charset=utf-8"
+								},
 								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:07:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "b9d5470b-bbea-444c-a630-ec5c060f22e5"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This is a test collection that makes a tiny request to Postman Echo service to get the list of request headers sent by a HTTP client.\",\n            \"_postman_id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n            \"updatedAt\": \"2022-06-16T20:21:13.000Z\",\n            \"fork\": {\n                \"label\": \"Test Fork\",\n                \"createdAt\": \"2022-06-16T19:51:44.069Z\",\n                \"from\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n            }\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"id\": \"82ee981b-e19f-962a-401e-ea34ebfb4848\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                            ],\n                            \"type\": \"text/javascript\"\n                        }\n                    }\n                ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                },\n                \"response\": []\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"date\": \"2025-03-23T00:00:00\",\n    \"totalCredit\": 100,\n    \"totalDebit\": 0,\n    \"balance\": 100\n}"
 						},
 						{
-							"name": "Not Found",
+							"name": "Not Found Response",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/consolidation/2025-03-28",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"consolidation",
+										"2025-03-28"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:08:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "c55f3ea5-7431-4cb1-be15-780ca65107ac"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"instanceNotFoundError\",\n        \"message\": \"We could not find the collection you are looking for\"\n    }\n}"
+							"body": "{\n    \"correlationId\": \"c55f3ea5-7431-4cb1-be15-780ca65107ac\",\n    \"error\": \"Consolidação não encontrada para esta data.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at FluxoCaixa.Application.Services.ConsolidationService.GetByDateAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\ConsolidationService.cs:line 26\\r\\n   at FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByDate(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\ConsolidationController.cs:line 35\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						},
 						{
-							"name": "Rate Limit Exceeded",
+							"name": "InternalServerError Response",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/consolidation/2025-03-23",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"consolidation",
+										"2025-03-23"
 									]
 								}
 							},
-							"status": "Too Many Requests",
-							"code": 429,
+							"status": "Internal Server Error",
+							"code": 500,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:20:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "5d586e94-110f-4551-a382-e7add35517cc"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"rateLimited\",\n    \"message\": \"Rate limit exceeded. Please retry after 1669048687\"\n}"
+							"body": "{\n    \"correlationId\": \"5d586e94-110f-4551-a382-e7add35517cc\",\n    \"error\": \"Nome de objeto 'consolidations' inválido.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)\\r\\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n--- End of stack trace from previous location ---\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\\r\\n--- End of stack trace from previous location ---\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\\r\\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)\\r\\n   at FluxoCaixa.Infra.Repositories.Repository`1.GetByKeysAsync(Object[] keys) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.InfraEstructure\\\\Repositories\\\\Repository.cs:line 31\\r\\n   at FluxoCaixa.Application.Services.ConsolidationService.GetByDateAsync(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\ConsolidationService.cs:line 26\\r\\n   at FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByDate(DateTime date) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\ConsolidationController.cs:line 35\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						}
 					]
 				},
@@ -917,7 +883,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"dateStart\": \"2025-03-01\",\r\n  \"dateEnd\": \"2025-03-22\"\r\n}",
+							"raw": "{\r\n  \"dateStart\": \"2025-03-01\",\r\n  \"dateEnd\": \"2025-03-23\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -925,7 +891,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:7056/api/v1/Financial/consolidation",
+							"raw": "https://localhost:7056/api/v1/consolidation",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -934,7 +900,6 @@
 							"path": [
 								"api",
 								"v1",
-								"Financial",
 								"consolidation"
 							]
 						},
@@ -944,61 +909,34 @@
 						{
 							"name": "Successful Response",
 							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": {
-										"content": "",
-										"type": "text/plain"
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This is a test collection that makes a tiny request to Postman Echo service to get the list of request headers sent by a HTTP client.\",\n            \"_postman_id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n            \"updatedAt\": \"2022-06-16T20:21:13.000Z\",\n            \"fork\": {\n                \"label\": \"Test Fork\",\n                \"createdAt\": \"2022-06-16T19:51:44.069Z\",\n                \"from\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n            }\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"id\": \"82ee981b-e19f-962a-401e-ea34ebfb4848\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                            ],\n                            \"type\": \"text/javascript\"\n                        }\n                    }\n                ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                },\n                \"response\": []\n            }\n        ]\n    }\n}"
-						},
-						{
-							"name": "Get Collection with Access Token",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2?access_key={{accessKey}}",
-									"protocol": "https",
-									"host": [
-										"api",
-										"getpostman",
-										"com"
-									],
-									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
-									],
-									"query": [
-										{
-											"key": "access_key",
-											"value": "{{accessKey}}"
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dateStart\": \"2025-03-01\",\r\n  \"dateEnd\": \"2025-03-23\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7056/api/v1/consolidation",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7056",
+									"path": [
+										"api",
+										"v1",
+										"consolidation"
 									]
 								}
 							},
@@ -1008,67 +946,225 @@
 							"header": [
 								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"description": {
-										"content": "",
-										"type": "text/plain"
-									}
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:02:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "02fa7639-fe26-44d4-a84e-d4d4ade18856"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"collection\": {\n        \"info\": {\n            \"name\": \"Test Collection\",\n            \"description\": \"This is a test collection that makes a tiny request to Postman Echo service to get the list of request headers sent by a HTTP client.\",\n            \"_postman_id\": \"12ece9e1-2abf-4edc-8e34-de66e74114d2\",\n            \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n            \"updatedAt\": \"2022-06-16T20:21:13.000Z\",\n            \"fork\": {\n                \"label\": \"Test Fork\",\n                \"createdAt\": \"2022-06-16T19:51:44.069Z\",\n                \"from\": \"12345678-12ece9e1-2abf-4edc-8e34-de66e74114d2\"\n            }\n        },\n        \"item\": [\n            {\n                \"name\": \"Test GET Response\",\n                \"id\": \"82ee981b-e19f-962a-401e-ea34ebfb4848\",\n                \"event\": [\n                    {\n                        \"listen\": \"test\",\n                        \"script\": {\n                            \"id\": \"7d2334fc-a84a-4c3d-b26c-7529afa4c0ae\",\n                            \"exec\": [\n                                \"pm.test(\\\"Status code is 200\\\", function () {\",\n                                \"    pm.response.to.have.status(200);\",\n                                \"});\"\n                            ],\n                            \"type\": \"text/javascript\"\n                        }\n                    }\n                ],\n                \"request\": {\n                    \"url\": \"https://echo.getpostman.com/headers\",\n                    \"method\": \"GET\",\n                    \"header\": [\n                        {\n                            \"key\": \"Content-Type\",\n                            \"value\": \"application/json\"\n                        }\n                    ]\n                },\n                \"response\": []\n            }\n        ]\n    }\n}"
+							"body": "[\n    {\n        \"date\": \"2025-03-20T00:00:00\",\n        \"totalCredit\": 10.11,\n        \"totalDebit\": 0,\n        \"balance\": 10.11\n    },\n    {\n        \"date\": \"2025-03-21T00:00:00\",\n        \"totalCredit\": 12,\n        \"totalDebit\": 5,\n        \"balance\": 7\n    },\n    {\n        \"date\": \"2025-03-22T00:00:00\",\n        \"totalCredit\": 125.78,\n        \"totalDebit\": 71.24,\n        \"balance\": 54.54\n    },\n    {\n        \"date\": \"2025-03-23T00:00:00\",\n        \"totalCredit\": 100,\n        \"totalDebit\": 0,\n        \"balance\": 100\n    }\n]"
 						},
 						{
-							"name": "Not Found",
+							"name": "BadRequest Response",
 							"originalRequest": {
-								"method": "GET",
-								"header": [],
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dateStart\": \"2025-03-01\",\r\n  \"dateEnd\": \"2025-03-31\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/consolidation",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"consolidation"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/problem+json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:03:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "31bc4a4b-42a4-4495-8b1f-71c6f401f50c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"https://tools.ietf.org/html/rfc9110#section-15.5.1\",\n    \"title\": \"One or more validation errors occurred.\",\n    \"status\": 400,\n    \"errors\": {\n        \"DateEnd\": [\n            \"A data final não pode ser maior que a data de hoje.\"\n        ]\n    },\n    \"traceId\": \"00-770e74acfaefcf2cc7508abe5ad91819-1d8f74ca38af725f-00\"\n}"
+						},
+						{
+							"name": "Not Found Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dateStart\": \"2025-03-09\",\r\n  \"dateEnd\": \"2025-03-10\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://localhost:7056/api/v1/consolidation",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "7056",
+									"path": [
+										"api",
+										"v1",
+										"consolidation"
 									]
 								}
 							},
 							"status": "Not Found",
 							"code": 404,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:05:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "830b9067-3e40-4a2e-be50-58314dd347b7"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"error\": {\n        \"name\": \"instanceNotFoundError\",\n        \"message\": \"We could not find the collection you are looking for\"\n    }\n}"
+							"body": "{\n    \"correlationId\": \"830b9067-3e40-4a2e-be50-58314dd347b7\",\n    \"error\": \"Consolidação não encontrada para o período.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at FluxoCaixa.Application.Services.ConsolidationService.GetByRangeDateAsync(DateTime dateStart, DateTime dateEnd) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\ConsolidationService.cs:line 40\\r\\n   at FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByRangeDate(ConsolidationRequestModel request) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\ConsolidationController.cs:line 56\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						},
 						{
-							"name": "Rate Limit Exceeded",
+							"name": "InternalServerError Response",
 							"originalRequest": {
-								"method": "GET",
-								"header": [],
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"dateStart\": \"2025-03-01\",\r\n  \"dateEnd\": \"2025-03-23\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "https://api.getpostman.com/collections/12ece9e1-2abf-4edc-8e34-de66e74114d2",
+									"raw": "https://localhost:7056/api/v1/consolidation",
 									"protocol": "https",
 									"host": [
-										"api",
-										"getpostman",
-										"com"
+										"localhost"
 									],
+									"port": "7056",
 									"path": [
-										"collections",
-										"12ece9e1-2abf-4edc-8e34-de66e74114d2"
+										"api",
+										"v1",
+										"consolidation"
 									]
 								}
 							},
-							"status": "Too Many Requests",
-							"code": 429,
+							"status": "Internal Server Error",
+							"code": 500,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:20:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Correlation-ID",
+									"value": "9d7ceb09-718a-44a3-97c1-384f831a41ce"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"error\": \"rateLimited\",\n    \"message\": \"Rate limit exceeded. Please retry after 1669048687\"\n}"
+							"body": "{\n    \"correlationId\": \"9d7ceb09-718a-44a3-97c1-384f831a41ce\",\n    \"error\": \"Nome de objeto 'consolidations' inválido.\",\n    \"details\": \"\",\n    \"stackTrace\": \"   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)\\r\\n   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n--- End of stack trace from previous location ---\\r\\n   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)\\r\\n   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)\\r\\n--- End of stack trace from previous location ---\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()\\r\\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\\r\\n   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)\\r\\n   at FluxoCaixa.Infra.Repositories.Repository`1.GetWhereAsync(Expression`1 predicate) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.InfraEstructure\\\\Repositories\\\\Repository.cs:line 37\\r\\n   at FluxoCaixa.Application.Services.ConsolidationService.GetByRangeDateAsync(DateTime dateStart, DateTime dateEnd) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.Application\\\\Services\\\\ConsolidationService.cs:line 37\\r\\n   at FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByRangeDate(ConsolidationRequestModel request) in C:\\\\Users\\\\fi668\\\\source\\\\repos\\\\verity-fluxo-caixa\\\\src\\\\FluxoCaixa.API\\\\Controllers\\\\v1\\\\ConsolidationController.cs:line 56\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\\r\\n   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)\",\n    \"fieldErrors\": null\n}"
 						}
 					]
 				}

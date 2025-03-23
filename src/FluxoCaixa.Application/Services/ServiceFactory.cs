@@ -1,10 +1,8 @@
 ﻿using FluxoCaixa.Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using System.Diagnostics.CodeAnalysis;
 
 namespace FluxoCaixa.Application.Services
 {
-    [ExcludeFromCodeCoverage]
     public class ServiceFactory(IServiceProvider serviceProvider) : IServiceFactory
     {
         private readonly IServiceProvider _serviceProvider = serviceProvider;

@@ -34,7 +34,10 @@ namespace FluxoCaixa.Application.Services
 
             using var scope = _serviceProvider.CreateScope();
             var _consolidationRepository = scope.ServiceProvider.GetRequiredService<IRepository<Consolidation>>();
-            var consolidations = await _consolidationRepository.GetWhereAsync(d => d.Date >= dateStart && d.Date <= dateEnd) ?? throw new NotFoundException("Consolidação não encontrada para o período.");
+            var consolidations = await _consolidationRepository.GetWhereAsync(d => d.Date >= dateStart && d.Date <= dateEnd);
+
+            if (consolidations.Count() == 0)
+                throw new NotFoundException("Consolidação não encontrada para o período.");
 
             return _mapper.Map<IEnumerable<ConsolidationDTO>>(consolidations);
         }

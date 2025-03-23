@@ -23,6 +23,9 @@ namespace FluxoCaixa.Application.Services
             var _launchRepository = scope.ServiceProvider.GetRequiredService<IRepository<Launch>>();
             var launches = await _launchRepository.GetWhereAsync(r => r.Date == date);
 
+            if (launches.Count() == 0)
+                throw new NotFoundException("Lançamento não encontrado para a data.");
+
             var launchesDto = _mapper.Map<IEnumerable<LaunchDTO>>(launches);
             return launchesDto;
         }

@@ -71,7 +71,8 @@ Abaixo está a organização principal do projeto:
         - log-api-YYYYMMDD.txt
     /controllers
         /v1
-            - FinancialController.cs
+            - ConsolidationlController.cs
+            - LaunchController.cs
   /FluxoCaixa.Application
     /interfaces
         - ILaunchService.cs
@@ -101,7 +102,8 @@ Abaixo está a organização principal do projeto:
     - ServiceDependencyRegister.cs
   /FluxoCaixa.Tests
     /api
-        - FinancialControllerTests.cs
+        - ConsolidationlControllerTests.cs
+        - LaunchControllerTests.cs
     /application
         - ConsolidatedServiceTests.cs
         - LaunchServiceTests.cs
@@ -181,7 +183,7 @@ Use **Postman** ou **cURL** para testar os endpoints.
 
 **Exemplo de Lançamentos**
 
-- Rota: `POST /api/v1/financial/launch`
+- Rota: `POST /api/v1/launch`
  
 - Payload:
 ```
@@ -196,7 +198,7 @@ json
 - Curl:
 ```
 curl -X 'POST' \
-  'https://localhost:7056/api/v1/Financial/launch' \
+  'https://localhost:7056/api/v1/launch' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -208,7 +210,7 @@ curl -X 'POST' \
 
 **Exemplo de Conciliação**
 
-- Rota: `POST /api/v1/financial/consolidation/{date}`
+- Rota: `POST /api/v1/consolidation/{date}`
 
 - Resposta:
 ```
@@ -224,14 +226,14 @@ json
 - Curl:
 ```
 curl -X 'POST' \
-  'https://localhost:7056/api/v1/Financial/consolidation/2025-03-20' \
+  'https://localhost:7056/api/v1/consolidation/2025-03-20' \
   -H 'accept: */*' \
   -d ''
 ```
 
 **Relatório de Conciliação**
 
-- Rota: `POST /api/v1/financial/consolidation`
+- Rota: `POST /api/v1/consolidation`
 
 - Resposta:
 ```
@@ -261,7 +263,7 @@ json
 - Curl:
 ```
 curl -X 'POST' \
-  'https://localhost:7056/api/v1/Financial/consolidation' \
+  'https://localhost:7056/api/v1/consolidation' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{

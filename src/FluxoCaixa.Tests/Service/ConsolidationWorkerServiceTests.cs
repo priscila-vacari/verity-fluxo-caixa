@@ -1,18 +1,8 @@
-﻿using FluxoCaixa.Application.DTOs;
-using FluxoCaixa.Application.Interfaces;
-using FluxoCaixa.Application.Services;
-using FluxoCaixa.Domain.Entities;
-using FluxoCaixa.Domain.Enum;
-using FluxoCaixa.Domain.Exceptions;
+﻿using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Service.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FluxoCaixa.Tests.Service
 {
@@ -50,6 +40,22 @@ namespace FluxoCaixa.Tests.Service
 
             _consolidationServiceMock.Verify(service => service.GenerateDailyconsolidationAsync(It.IsAny<DateTime>()), Times.AtLeastOnce);
         }
+
+        [Fact]
+        public async Task ExecuteAsync_WithoutConfigRequency_ShouldCallGenerateDailyconsolidationAsync()
+        {
+            var mockConfiguration = new Mock<IConfiguration>();
+            var consolidationWorker = new ConsolidationWorkerService(_loggerMock.Object, _serviceFactoryMock.Object, mockConfiguration.Object);
+
+            using var cts = new CancellationTokenSource();
+            cts.CancelAfter(TimeSpan.FromSeconds(5));
+
+            await consolidationWorker.StartAsync(cts.Token);
+            await Task.Delay(1500);
+
+            _consolidationServiceMock.Verify(service => service.GenerateDailyconsolidationAsync(It.IsAny<DateTime>()), Times.AtLeastOnce);
+        }
+
 
         [Fact]
         public async Task ExecuteAsync_ShouldHandleCancellationGracefully()

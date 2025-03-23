@@ -4,16 +4,14 @@ using FluxoCaixa.Application.DTOs;
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.Services;
 using FluxoCaixa.Domain.Entities;
-using FluxoCaixa.Domain.Enum;
 using FluxoCaixa.Domain.Exceptions;
 using FluxoCaixa.Infra.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Linq.Expressions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace FluxoCaixa.Tests.Application
+namespace FluxoCaixa.Tests.Application.Services
 {
     public class ConsolidatedServiceTests
     {
@@ -92,6 +90,21 @@ namespace FluxoCaixa.Tests.Application
             Assert.Equal(consolidationsDTO, response);
             _repositoryMock.Verify(r => r.GetWhereAsync(It.IsAny<Expression<Func<Consolidation, bool>>>()), Times.Once);
             _mapperMock.Verify(r => r.Map<IEnumerable<ConsolidationDTO>>(It.IsAny<IEnumerable<Consolidation>>()), Times.Once);
+        }
+
+        [Theory]
+        [InlineData("2025-03-01", "2025-03-31")]
+        public async Task GetByRangeDateAsync_ShouldHandleNotFoundException(DateTime dateStart, DateTime dateEnd)
+        {
+            IEnumerable<Consolidation> consolidations = new List<Consolidation>();
+            _repositoryMock.Setup(r => r.GetWhereAsync(It.IsAny<Expression<Func<Consolidation, bool>>>())).ReturnsAsync(consolidations);
+
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => _consolidationService.GetByRangeDateAsync(dateStart, dateEnd));
+
+            Assert.Equal("Consolidação não encontrada para o período.", ex.Message);
+
+            _repositoryMock.Verify(r => r.GetWhereAsync(It.IsAny<Expression<Func<Consolidation, bool>>>()), Times.Once);
+            _mapperMock.Verify(r => r.Map<ConsolidationDTO>(It.IsAny<Consolidation>()), Times.Never);
         }
 
         [Theory]

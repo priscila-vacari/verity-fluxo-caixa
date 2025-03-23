@@ -25,6 +25,7 @@ namespace FluxoCaixa.API.Controllers.v1
         /// <returns>Retorna todos os lançamentos encontrados da data específica</returns>
         [HttpGet("{date}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetLaunchByDate(DateTime date)
         {
@@ -44,6 +45,7 @@ namespace FluxoCaixa.API.Controllers.v1
         /// <returns>Retorna o lançamento criado</returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AddLaunch([FromBody] LaunchRequestModel launchModel)

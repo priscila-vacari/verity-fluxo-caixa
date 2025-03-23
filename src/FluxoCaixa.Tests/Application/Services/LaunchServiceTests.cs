@@ -11,9 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Linq.Expressions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace FluxoCaixa.Tests.Application
+namespace FluxoCaixa.Tests.Application.Services
 {
     public class LaunchServiceTests
     {
@@ -59,6 +58,22 @@ namespace FluxoCaixa.Tests.Application
             _repositoryMock.Verify(r => r.GetWhereAsync(It.IsAny<Expression<Func<Launch, bool>>>()), Times.Once);
             _mapperMock.Verify(r => r.Map<IEnumerable<LaunchDTO>>(It.IsAny<IEnumerable<Launch>>()), Times.Once);
         }
+
+        [Theory]
+        [InlineData("2025-03-21")]
+        public async Task GetByDateAsync_ShouldHandleNotFoundException(DateTime date)
+        {
+            IEnumerable<Launch> launches = new List<Launch>();
+            _repositoryMock.Setup(r => r.GetWhereAsync(It.IsAny<Expression<Func<Launch, bool>>>())).ReturnsAsync(launches);
+
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => _launchService.GetByDateAsync(date));
+
+            Assert.Equal("Lançamento não encontrado para a data.", ex.Message);
+
+            _repositoryMock.Verify(r => r.GetWhereAsync(It.IsAny<Expression<Func<Launch, bool>>>()), Times.Once);
+            _mapperMock.Verify(r => r.Map<ConsolidationDTO>(It.IsAny<Consolidation>()), Times.Never);
+        }
+
 
         [Fact]
         public async Task AddAsync_ShouldCallAddAsync()
