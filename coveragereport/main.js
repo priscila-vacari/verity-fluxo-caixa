@@ -230,7 +230,6 @@ var assemblies = [
       { "name": "FluxoCaixa.API.Models.LaunchResponseModel", "rp": "FluxoCaixa.API_LaunchResponseModel.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Validators.ConsolidationRequestModelValidator", "rp": "FluxoCaixa.API_ConsolidationRequestModelValidator.html", "cl": 18, "ucl": 0, "cal": 18, "tl": 37, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "FluxoCaixa.API.Validators.LaunchRequestModelValidator", "rp": "FluxoCaixa.API_LaunchRequestModelValidator.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Program", "rp": "FluxoCaixa.API_Program.html", "cl": 0, "ucl": 96, "cal": 96, "tl": 149, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "FluxoCaixa.Application",

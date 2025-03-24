@@ -325,6 +325,11 @@
             Valor
             </summary>
         </member>
+        <member name="T:FluxoCaixa.API.Program">
+            <summary>
+            Classe principal do programa
+            </summary>
+        </member>
         <member name="T:FluxoCaixa.API.Swagger.ConfigureSwaggerOptions">
             <summary>
             Classe de configuração de swagger
