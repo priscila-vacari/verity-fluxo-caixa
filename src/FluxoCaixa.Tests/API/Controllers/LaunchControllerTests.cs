@@ -17,7 +17,6 @@ namespace FluxoCaixa.Tests.API.Controllers
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<IServiceFactory> _serviceFactoryMock;
         private readonly Mock<ILaunchService> _launchServiceMock;
-        private readonly Mock<IConsolidationService> _consolidationServiceMock;
         private readonly LaunchController _serviceController;
 
         public LaunchControllerTests()
