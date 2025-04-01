@@ -28,7 +28,7 @@ namespace FluxoCaixa.Tests.API.Controllers
 
             _serviceFactoryMock.Setup(f => f.CreateLaunchService()).Returns(_launchServiceMock.Object);
 
-            _serviceController = new LaunchController(_loggerMock.Object, _mapperMock.Object, _serviceFactoryMock.Object);
+            _serviceController = new LaunchController(_loggerMock.Object, _mapperMock.Object, _launchServiceMock.Object);
         }
 
         [Theory]

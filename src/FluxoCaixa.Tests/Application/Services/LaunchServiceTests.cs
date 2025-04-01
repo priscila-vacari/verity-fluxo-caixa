@@ -39,7 +39,7 @@ namespace FluxoCaixa.Tests.Application.Services
             _serviceProviderMock.Setup(p => p.GetService(typeof(IServiceScopeFactory))).Returns(_scopeFactoryMock.Object);
             _serviceProviderMock.Setup(p => p.GetService(typeof(IRepository<Launch>))).Returns(_repositoryMock.Object);
 
-            _launchService = new LaunchService(_loggerMock.Object, _mapperMock.Object, _serviceProviderMock.Object);
+            _launchService = new LaunchService(_loggerMock.Object, _mapperMock.Object, _repositoryMock.Object);
         }
 
         [Theory]

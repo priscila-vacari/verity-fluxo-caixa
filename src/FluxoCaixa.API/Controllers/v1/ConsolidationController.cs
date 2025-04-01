@@ -11,11 +11,11 @@ namespace FluxoCaixa.API.Controllers.v1
     /// </summary>
     /// <param name="logger"></param>
     /// <param name="mapper"></param>
-    /// <param name="serviceFactory"></param>
+    /// <param name="consolidationService"></param>
     [ApiVersion("1.0")]
-    public class ConsolidationController(ILogger<LaunchController> logger, IMapper mapper, IServiceFactory serviceFactory) : BaseController(logger, mapper)
+    public class ConsolidationController(ILogger<LaunchController> logger, IMapper mapper, IConsolidationService consolidationService) : BaseController(logger, mapper)
     {
-        private readonly IServiceFactory _serviceFactory = serviceFactory;
+        private readonly IConsolidationService _consolidationService = consolidationService;
 
         /// <summary>
         /// Busca a conciliação de uma data
@@ -30,8 +30,7 @@ namespace FluxoCaixa.API.Controllers.v1
         {
             _logger.LogInformation("Obter a consolidação do dia {date}", date);
 
-            var consolidationService = _serviceFactory.CreateConsolidationService();
-            var consolidation = await consolidationService.GetByDateAsync(date);
+            var consolidation = await _consolidationService.GetByDateAsync(date);
 
             var consolidationModel = _mapper.Map<ConsolidationResponseModel>(consolidation);
             return Ok(consolidationModel);
@@ -51,8 +50,7 @@ namespace FluxoCaixa.API.Controllers.v1
         {
             _logger.LogInformation("Obter a consolidação do período {dateStart} a {dateEnd}", request.DateStart, request.DateEnd);
 
-            var consolidationService = _serviceFactory.CreateConsolidationService();
-            var consolidations = await consolidationService.GetByRangeDateAsync(request.DateStart, request.DateEnd);
+            var consolidations = await _consolidationService.GetByRangeDateAsync(request.DateStart, request.DateEnd);
 
             var consolidationsModel = _mapper.Map<IEnumerable<ConsolidationResponseModel>>(consolidations);
             return Ok(consolidationsModel);
@@ -70,8 +68,7 @@ namespace FluxoCaixa.API.Controllers.v1
         {
             _logger.LogInformation("Gerar a consolidação para data {date}", date);
 
-            var consolidationService = _serviceFactory.CreateConsolidationService();
-            var consolidation = await consolidationService.GenerateDailyconsolidationAsync(date);
+            var consolidation = await _consolidationService.GenerateDailyconsolidationAsync(date);
 
             var consolidationModel = _mapper.Map<ConsolidationResponseModel>(consolidation);
             return new CreatedResult(string.Empty, consolidationModel);

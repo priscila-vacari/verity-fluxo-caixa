@@ -34,15 +34,15 @@
             </summary>
             <param name="logger"></param>
             <param name="mapper"></param>
-            <param name="serviceFactory"></param>
+            <param name="consolidationService"></param>
         </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.LaunchController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IServiceFactory)">
+        <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.LaunchController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IConsolidationService)">
             <summary>
             Controller responsável pelas conciliações
             </summary>
             <param name="logger"></param>
             <param name="mapper"></param>
-            <param name="serviceFactory"></param>
+            <param name="consolidationService"></param>
         </member>
         <member name="M:FluxoCaixa.API.Controllers.v1.ConsolidationController.GetConsolidationByDate(System.DateTime)">
             <summary>
@@ -71,15 +71,15 @@
             </summary>
             <param name="logger"></param>
             <param name="mapper"></param>
-            <param name="serviceFactory"></param>
+            <param name="launchService"></param>
         </member>
-        <member name="M:FluxoCaixa.API.Controllers.v1.LaunchController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.LaunchController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.IServiceFactory)">
+        <member name="M:FluxoCaixa.API.Controllers.v1.LaunchController.#ctor(Microsoft.Extensions.Logging.ILogger{FluxoCaixa.API.Controllers.v1.LaunchController},AutoMapper.IMapper,FluxoCaixa.Application.Interfaces.ILaunchService)">
             <summary>
             Controller responsável pelos lançamentos
             </summary>
             <param name="logger"></param>
             <param name="mapper"></param>
-            <param name="serviceFactory"></param>
+            <param name="launchService"></param>
         </member>
         <member name="M:FluxoCaixa.API.Controllers.v1.LaunchController.GetLaunchByDate(System.DateTime)">
             <summary>

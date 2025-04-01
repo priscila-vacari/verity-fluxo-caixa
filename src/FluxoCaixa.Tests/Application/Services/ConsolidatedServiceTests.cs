@@ -40,7 +40,7 @@ namespace FluxoCaixa.Tests.Application.Services
             _serviceProviderMock.Setup(p => p.GetService(typeof(IServiceScopeFactory))).Returns(_scopeFactoryMock.Object);
             _serviceProviderMock.Setup(p => p.GetService(typeof(IRepository<Consolidation>))).Returns(_repositoryMock.Object);
 
-            _consolidationService = new ConsolidationService(_loggerMock.Object, _mapperMock.Object, _launchServiceMock.Object, _serviceProviderMock.Object);
+            _consolidationService = new ConsolidationService(_loggerMock.Object, _mapperMock.Object, _launchServiceMock.Object, _repositoryMock.Object);
         }
 
         [Theory]

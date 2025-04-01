@@ -12,11 +12,11 @@ namespace FluxoCaixa.API.Controllers.v1
     /// </summary>
     /// <param name="logger"></param>
     /// <param name="mapper"></param>
-    /// <param name="serviceFactory"></param>
+    /// <param name="launchService"></param>
     [ApiVersion("1.0")]
-    public class LaunchController(ILogger<LaunchController> logger, IMapper mapper, IServiceFactory serviceFactory) : BaseController(logger, mapper)
+    public class LaunchController(ILogger<LaunchController> logger, IMapper mapper, ILaunchService launchService) : BaseController(logger, mapper)
     {
-        private readonly IServiceFactory _serviceFactory = serviceFactory;
+        private readonly ILaunchService _launchService = launchService;
 
         /// <summary>
         /// Busca os lançamentos de uma data
@@ -31,8 +31,7 @@ namespace FluxoCaixa.API.Controllers.v1
         {
             _logger.LogInformation("Obter todos os lançamentos do dia {date}", date);
 
-            var launchService = _serviceFactory.CreateLaunchService();
-            var launches = await launchService.GetByDateAsync(date);
+            var launches = await _launchService.GetByDateAsync(date);
 
             var launchResponseModel = _mapper.Map<IEnumerable<LaunchResponseModel>>(launches);
             return Ok(launchResponseModel);
@@ -54,8 +53,7 @@ namespace FluxoCaixa.API.Controllers.v1
 
             var launchDto = _mapper.Map<LaunchDTO>(launchModel);
 
-            var launchService = _serviceFactory.CreateLaunchService();
-            await launchService.AddAsync(launchDto);
+            await _launchService.AddAsync(launchDto);
 
             var launchResponseModel = _mapper.Map<LaunchResponseModel>(launchDto);
             return CreatedAtAction(nameof(AddLaunch), launchResponseModel);

@@ -27,7 +27,7 @@ namespace FluxoCaixa.Tests.API.Controllers
 
             _serviceFactoryMock.Setup(f => f.CreateConsolidationService()).Returns(_consolidationServiceMock.Object);
 
-            _serviceController = new ConsolidationController(_loggerMock.Object, _mapperMock.Object, _serviceFactoryMock.Object);
+            _serviceController = new ConsolidationController(_loggerMock.Object, _mapperMock.Object, _consolidationServiceMock.Object);
         }
 
         [Theory]
